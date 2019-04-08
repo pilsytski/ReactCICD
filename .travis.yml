@@ -13,7 +13,9 @@ deploy:
   api_key: f2299589-a5dc-4e42-acbc-1b416396b279
   app: reactcicdheruku
 
-
+after_success:
+  - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 
 
      
